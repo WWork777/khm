@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Montserrat, Oswald } from "next/font/google";
+import "./globals.scss";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+
+// Montserrat шрифт
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin", "cyrillic"], // Добавляем поддержку кириллицы
+  weight: ["300", "400", "500", "600", "700"], // Указываем нужные начертания
+  style: ["normal", "italic"], // Обычный и курсив
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Oswald шрифт
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin", "cyrillic"], // Добавляем поддержку кириллицы
+  weight: ["300", "400", "500", "600", "700"], // Указываем нужные начертания
 });
 
 export const metadata: Metadata = {
@@ -24,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${montserrat.variable} ${oswald.variable}`}>
         {children}
       </body>
     </html>

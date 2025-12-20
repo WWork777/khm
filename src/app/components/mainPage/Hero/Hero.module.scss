@@ -1,0 +1,119 @@
+
+.hero{
+    // min-height: 100vh;
+    padding: 40px;
+
+    .heroIM {
+        background: url("/images/fon.png");
+        background-size: cover;
+        height: calc(100vh - 80px);
+        border-radius: 19px;
+        display: flex;
+        position: relative; /* Добавляем для позиционирования overlay */
+        
+        /* Убираем opacity с самого элемента, если нужно затемнить только фон */
+        /* opacity: 0.7; */
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.35); /* Затемнение 70% */
+            border-radius: 19px;
+            z-index: 1;
+        }
+    }
+    
+    .heroContent{
+        position: relative; /* Поднимаем над overlay */
+        z-index: 2; /* Должен быть больше, чем у overlay */
+        color: white; /* Белый текст для контраста */
+        max-width: 1500px;
+        margin: 0 auto;
+        padding-top: 220px;
+
+        h1{
+            color: #FFFFFF;
+            text-transform: uppercase;
+        }
+
+        p{
+            text-transform: uppercase;
+            font-size: 40px;
+        }
+
+        // Button.module.scss
+        .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        padding: 16px 24px;
+        background-color: var(--second-background, #f0f0f0);
+        border: none;
+        border-radius: 50px;
+        font-family: var(--font-montserrat), sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.4s ease;
+        min-width: 260px;
+        height: 56px;
+
+        &:hover {
+            background-color: var(--third-background, #4CAF50);
+            
+            .text {
+            transform: translateX(-12px);
+            }
+            
+            .circle {
+            left: calc(100% - 48px);
+            background-color: white;
+            
+            .arrow {
+                transform: rotate(90deg);
+                filter: invert(0); // Возвращаем черный цвет
+            }
+            }
+        }
+        }
+
+        .text {
+        transition: transform 0.4s ease;
+        z-index: 2;
+        }
+
+        .circle {
+        position: absolute;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.4s ease;
+        z-index: 3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .arrow {
+        width: 20px;
+        height: 20px;
+        transform: rotate(-90deg);
+        transition: transform 0.4s ease;
+        filter: invert(1); // Делаем стрелку белой изначально
+        }
+        
+    }
+}
