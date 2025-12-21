@@ -2,11 +2,12 @@
 .hero{
     // min-height: 100vh;
     padding: 40px;
+    margin: 0 !important;
 
     .heroIM {
         background: url("/images/fon.png");
         background-size: cover;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 90px);
         border-radius: 19px;
         display: flex;
         position: relative; /* Добавляем для позиционирования overlay */
@@ -28,12 +29,12 @@
     }
     
     .heroContent{
-        position: relative; /* Поднимаем над overlay */
-        z-index: 2; /* Должен быть больше, чем у overlay */
-        color: white; /* Белый текст для контраста */
+        position: relative;
+        z-index: 2;
+        color: white;
         max-width: 1500px;
         margin: 0 auto;
-        padding-top: 220px;
+        padding-top: 80px;
 
         h1{
             color: #FFFFFF;
@@ -41,79 +42,86 @@
         }
 
         p{
+            margin: 40px 0;
             text-transform: uppercase;
             font-size: 40px;
+            letter-spacing: -0.05em;
         }
 
-        // Button.module.scss
-        .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 16px;
-        padding: 16px 24px;
-        background-color: var(--second-background, #f0f0f0);
-        border: none;
-        border-radius: 50px;
-        font-family: var(--font-montserrat), sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        color: #333;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        transition: background-color 0.4s ease;
-        min-width: 260px;
-        height: 56px;
+        .CTAbutton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 16px 24px;
+            background-color: #FFFFFF;
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-montserrat), sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease 0.01s;
+            height: 80px;
 
-        &:hover {
-            background-color: var(--third-background, #4CAF50);
-            
             .text {
-            transform: translateX(-12px);
+                transition: transform 0.4s ease;
+                z-index: 2;
+                margin-left: 80px;
+                color: var(--second-background);
             }
-            
+
             .circle {
-            left: calc(100% - 48px);
-            background-color: white;
+                overflow: visible !important;
+                border: 1px solid var(--third-background);
+                position: absolute;
+                left: 0px;
+                top: 50%;
+                transform: translateY(-50%);
+                aspect-ratio: 1 / 1;
+                height: 100%;
+                background-color: var(--third-background);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.4s ease;
+                z-index: 3;
+
+                .arrow {
+                    width: 40px;
+                    height: 40px;
+                    transform: rotate(-90deg);
+                    transition: transform 0.4s ease;
+                    fill: #FFFFFF
+                }
+            }
+
             
-            .arrow {
-                transform: rotate(90deg);
-                filter: invert(0); // Возвращаем черный цвет
+
+            &:hover {
+                // pointer-events: none;
+                transition: all 0.4s ease 0s;
+                padding: 16px 24px;
+                background-color: var(--third-background);
+                
+                .text {
+                    transform: translateX(-80px);
+                    color: #FFFFFF;
+                }
+                
+                .circle {
+                    border: 1px solid #FFFFFF;
+                    left: calc(100% - 80px);
+                    background-color: #FFFFFF;
+                
+                    .arrow {
+                        transform: rotate(0deg);
+                        fill: var(--third-background)
+                    }
+                }
             }
-            }
         }
-        }
-
-        .text {
-        transition: transform 0.4s ease;
-        z-index: 2;
-        }
-
-        .circle {
-        position: absolute;
-        left: 8px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background-color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: left 0.4s ease;
-        z-index: 3;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .arrow {
-        width: 20px;
-        height: 20px;
-        transform: rotate(-90deg);
-        transition: transform 0.4s ease;
-        filter: invert(1); // Делаем стрелку белой изначально
-        }
-        
     }
 }

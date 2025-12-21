@@ -1,0 +1,131 @@
+.head {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    // overflow: hidden;
+    .line{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -50%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 200%;
+            height: 2px;
+            background-color: var(--second-background);
+            z-index: -1;
+        }
+    }
+    
+  
+    h2 {
+        margin: auto 0;
+        align-items: center;
+        background-color: var(--background);
+        padding: 0 40px;
+        width: 50%;
+        display: flex;
+
+        @media (max-width: 500px) {
+            padding: 0 20px;
+            width: 80%;
+        }
+
+        span {
+            flex: 1;
+            background-color: var(--third-background);
+            color: #FFFFFF;
+            padding: 20px 30px;
+            margin-left: 10px;
+            border-radius: 25px;
+            text-align: left;
+        }
+    }
+
+    p{
+        text-transform: uppercase;
+        margin: 0 0 0 auto;
+        padding-right: 40px;
+        margin-bottom: 80px;
+    }
+}
+
+.sliderCard{
+    width: 450px;
+    border-radius: 25px;
+    background-color: #E1E1E1;
+
+    .cardImage{
+        width: 450px;
+        height: auto;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        
+    }
+    .cardBody{
+        padding: 11px;
+
+        button {
+            position: relative;
+            border: 2px solid var(--second-background);
+            border-radius: 25px;
+            margin: 0;
+            margin-top: 4px;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 1;
+            background: transparent;
+            
+            p {
+                margin: 0;
+                color: var(--second-background);
+                font-family: var(--font-montserrat);
+                font-weight: 400;
+                position: relative;
+                z-index: 2;
+                transition: color 0.3s ease ;
+            }
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: var(--third-background);
+                transition: left 0.3s ease;
+                z-index: 1;
+            }
+            
+            &:hover {
+                padding: 12px 22px;
+                margin-top: 0;
+                border: 2px solid var(--third-background);
+                background-color: var(--third-background);
+                
+                &::before {
+                    left: 0;
+                }
+                
+                p {
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        
+    }
+
+}
+
+.mySwiper{
+    overflow: visible;
+}
