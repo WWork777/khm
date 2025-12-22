@@ -1,0 +1,46 @@
+
+.footer{
+    padding: 40px;
+    position: relative;
+
+    .footerContent{
+        background-color: var(--card-back);
+        border-radius: 25px;
+        height: 300px;
+        
+    }
+
+    .arrows {
+        background-size: contain; /* или cover, или конкретные размеры */
+        margin: 0 auto;
+        max-width: 1500px;
+        position: relative;
+        z-index: 2;
+
+        img{
+            object-fit: contain;
+            position: absolute;
+            top: -100;
+        }
+    }
+
+    .navGrid{
+        display: flex;
+        flex-direction: row;
+        padding: 40px;
+        
+        .leftSide{
+            width: 25%;
+
+            img{
+                width: 200px;
+                height: auto;
+            }
+            
+        }
+
+        .navSide{
+            width: 50%;
+        }
+    }
+}

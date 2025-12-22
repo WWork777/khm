@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat, Oswald } from "next/font/google";
 import "./globals.scss";
 
+import Footer from "./components/layout/Footer/Footer";
+
 
 // Montserrat шрифт
 const montserrat = Montserrat({
@@ -32,6 +34,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${montserrat.variable} ${oswald.variable}`}>
         {children}
+        <Footer/>
       </body>
     </html>
   );

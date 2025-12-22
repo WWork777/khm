@@ -43,11 +43,12 @@
         background-color: var(--second-background);
         width: calc(66.66% - 10px);
         padding: 40px;
-        height: 500px;
         border-radius: 25px;
+        
 
         .formGroup {
             margin-bottom: 40px;
+            
         }
 
         .formGroup input,
@@ -70,26 +71,78 @@
             color: #979797;
         }
 
+        .formGroup input:not(:placeholder-shown),
+        .formGroup textarea:not(:placeholder-shown){
+            background-color: var(--card-back);
+        }
+
         .formGroup input:focus,
         .formGroup textarea:focus {
             outline: none;
         }
 
-        .submitBtn {
-            width: 100%;
-            padding: 15px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+        // .submitBtn {
+        //     width: 100%;
+        //     padding: 15px;
+        //     background-color: var(--primary-color);
+        //     color: white;
+        //     border: none;
+        //     border-radius: 8px;
+        //     font-size: 16px;
+        //     font-weight: 600;
+        //     cursor: pointer;
+        //     transition: background-color 0.3s ease;
+        // }
 
-        .submitBtn:hover {
-            background-color: var(--primary-color-dark);
+        // .submitBtn:hover {
+        //     background-color: var(--primary-color-dark);
+        // }
+
+        button {
+            width: 400px;
+            position: relative;
+            border: 2px solid var(--third-background);
+            background-color: var(--third-background);
+            border-radius: 25px;
+            margin-left: calc(50% - 200px);
+            margin-top: 4px;
+            padding: 10px 20px;
+            transition: all 0.6s ease;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 1;
+            justify-content: center;
+            p {
+                margin: 0;
+                color: #FFFFFF;
+                font-family: var(--font-montserrat);
+                font-weight: 400;
+                position: relative;
+                z-index: 2;
+            }
+            
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background-color: var(--form-color);
+                transition: left 0.3s ease;
+                z-index: 1;
+            }
+            
+            &:hover {
+                padding: 12px 22px;
+                margin-top: 0;
+                border: 2px solid #FFFFFF;
+                background-color: var(--form-color);
+                
+                &::before {
+                    left: 0;
+                }
+            }
         }
     }
 }

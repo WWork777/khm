@@ -43,7 +43,7 @@ export default function Contacts(){
                         </div>
                         
                         <button type="submit" className={styles.submitBtn}>
-                            Оставить заявку
+                            <p>Оставить заявку</p>
                         </button>
                     </form>
                 </div>
