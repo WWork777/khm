@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Oswald } from "next/font/google";
 import "./globals.scss";
 
+import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 
 
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${montserrat.variable} ${oswald.variable}`}>
+        <Header/>
         {children}
         <Footer/>
       </body>

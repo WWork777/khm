@@ -4,6 +4,7 @@
     flex-direction: row;
     gap: 20px;
 
+    
     .help{
         width: calc(33.33% - 10px);
         padding: 40px;
@@ -112,6 +113,11 @@
             overflow: hidden;
             z-index: 1;
             justify-content: center;
+
+            @media (max-width: 992px){
+                width: 100%;
+                margin-left: 0;
+            }
             p {
                 margin: 0;
                 color: #FFFFFF;
@@ -143,6 +149,14 @@
                     left: 0;
                 }
             }
+        }
+    }
+
+    @media (max-width: 992px){
+        flex-direction: column;
+        .help, .form{
+            width: 100%;
+            box-sizing: border-box;
         }
     }
 }

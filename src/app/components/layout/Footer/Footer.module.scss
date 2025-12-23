@@ -3,11 +3,23 @@
     padding: 40px;
     position: relative;
 
+    @media (max-width: 992px){
+        padding: 30px;
+    }
+
+    a{
+        text-decoration: none;
+        color: var(--second-background);
+    }
+
     .footerContent{
         background-color: var(--card-back);
         border-radius: 25px;
         height: 300px;
         
+        @media (max-width: 992px){
+            height: fit-content;
+        }
     }
 
     .arrows {
@@ -22,25 +34,119 @@
             position: absolute;
             top: -100;
         }
+
+        @media (max-width: 992px){
+            img{
+                top: -50;
+                left: calc(50% - 70px);
+                width: 150px;
+                height: 100px;
+            }
+        }
     }
 
     .navGrid{
         display: flex;
         flex-direction: row;
         padding: 40px;
+
+        @media (max-width: 992px){
+            flex-direction: column;
+        }
         
         .leftSide{
+            
             width: 25%;
+            display: flex;
+            flex-direction: column;
 
             img{
                 width: 200px;
                 height: auto;
             }
             
+            @media (max-width: 992px){
+                margin-bottom: 40px;
+                gap: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+            }
+
+            @media (max-width: 500px){
+                margin-bottom: 40px;
+                gap: 0px;
+                vdisplay: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
         }
 
         .navSide{
             width: 50%;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: left;
+            flex-direction: row;
+            gap: 40px;
+            
+            height: fit-content;
+            @media (max-width: 992px){
+                width: 100%;
+                margin-bottom: 40px;
+            }
+
+            @media (max-width: 500px){
+                flex-direction: column;
+                margin-bottom: 40px;
+            }
+        }
+        .contactsSide{
+            width: 25%;
+            
+
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                
+                li {
+                    transition: all 0.3s ease;
+                    margin-bottom: 20px;
+                    
+                    &:hover {
+                        transform: scale(1.05);
+                        opacity: 0.95;
+                    }
+                    
+                    &:active {
+                        transform: scale(0.98);
+                    }
+                    
+                    .footerContacts {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 20px;
+                    }
+                }
+            }
+
+            @media (max-width: 992px){
+                width: 100%;
+                ul{
+                    padding: 0;
+                    // gap: 20px;
+                    // flex-direction: row;
+                    // justify-content: left;
+                    // flex-wrap: wrap;
+
+                    li .footerContacts{
+                        gap:10px;
+                    }
+                }
+                
+            }
         }
     }
 }

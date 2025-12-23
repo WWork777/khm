@@ -36,7 +36,7 @@ export const SliderCard = ({
 
 export default function Products(){
     return(
-        <section className="container">
+        <section id="products">
             <div className={styles.head}>
                 <div className={styles.line}>
                     <h2>Наша <span>продукция</span></h2>
@@ -48,7 +48,7 @@ export default function Products(){
                     <Swiper
                         modules={[Navigation, Pagination]}
                         className={styles.mySwiper}
-                        spaceBetween={20}
+                        spaceBetween={60}
                         slidesPerView="auto"
                         navigation={{
                         nextEl: `.${styles.custom_next}`,

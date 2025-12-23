@@ -4,7 +4,7 @@ import styles from "./Contacts.module.scss"
 
 export default function Contacts(){
     return(
-        <section className="container">
+        <section className="container" id="contacts">
             
             <div className={styles.contactsGrid}>
                 <div className={styles.help}>

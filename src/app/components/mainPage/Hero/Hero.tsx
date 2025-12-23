@@ -9,7 +9,7 @@ export default function Hero(){
             <div className={styles.heroIM}>
                 <div className={styles.heroContent}>
                     <h1>поставщик редукторов donly в кемерово</h1>
-                    <p>оборудование от проверенного <br/>производителя</p>
+                    <p className="subTitle">оборудование от проверенного <br/>производителя</p>
 
                     <button className={styles.CTAbutton}>
                         <span className={styles.text}>Подобрать оборудование</span>

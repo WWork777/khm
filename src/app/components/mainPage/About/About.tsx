@@ -39,7 +39,7 @@ export const SliderCard = ({
 
 export default function About(){
     return(
-        <section className="container" style={{marginTop:"0px"}}>
+        <section className={styles.AboutContainer} id="about">
             <div className={styles.redFon}/>
             <div className={styles.aboutContent}>
                 <div className={styles.head}>
@@ -49,13 +49,13 @@ export default function About(){
                         <button className={styles.CTAbutton}>
                             <span className={styles.text}>Бесплатный подбор оборудования</span>
                             <div className={styles.circle}>
-                                <svg width="42" height="42" viewBox="0 0 42 42" fill="none" >
+                                <svg className={styles.arrow} width="42" height="42" viewBox="0 0 42 42" fill="none" >
                                     <path d="M27.877 20.0498L13.2479 6.11104C13.0038 5.87834 12.6795 5.74854 12.3423 5.74854C12.0051 5.74854 11.6808 5.87834 11.4367 6.11104L11.4209 6.12679C11.3022 6.23959 11.2076 6.37537 11.143 6.52587C11.0784 6.67637 11.0451 6.83844 11.0451 7.00222C11.0451 7.16601 11.0784 7.32808 11.143 7.47858C11.2076 7.62907 11.3022 7.76486 11.4209 7.87766L25.1969 21.0027L11.4209 34.1224C11.3022 34.2352 11.2076 34.371 11.143 34.5215C11.0784 34.672 11.0451 34.8341 11.0451 34.9978C11.0451 35.1616 11.0784 35.3237 11.143 35.4742C11.2076 35.6247 11.3022 35.7605 11.4209 35.8733L11.4367 35.889C11.6808 36.1217 12.0051 36.2515 12.3423 36.2515C12.6795 36.2515 13.0038 36.1217 13.2479 35.889L27.877 21.9503C28.0057 21.8277 28.1081 21.6803 28.1781 21.5169C28.2481 21.3536 28.2842 21.1777 28.2842 21C28.2842 20.8223 28.2481 20.6465 28.1781 20.4831C28.1081 20.3198 28.0057 20.1724 27.877 20.0498Z" fill="white"/>
                                 </svg>
                             </div>
                         </button>
                     </div>
-                    
+            
                 
                 
 
@@ -64,13 +64,14 @@ export default function About(){
                         <div className={`${styles.custom_next}`}></div>
                     </div>
                 </div>
-
+            </div>
+            
                 <div className={styles.sliderBox}>
                     <div className={styles.waveFon}/>
                     <Swiper
                         modules={[Navigation, Pagination]}
                         className={styles.mySwiper}
-                        spaceBetween={20}
+                        spaceBetween={60}
                         slidesPerView="auto"
                         navigation={{
                         nextEl: `.${styles.custom_next}`,
@@ -115,7 +116,7 @@ export default function About(){
                         ))}
                     </Swiper>
                 </div>
-            </div>
+
             
         </section>
     );

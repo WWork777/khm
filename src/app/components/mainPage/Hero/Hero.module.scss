@@ -3,6 +3,17 @@
     // min-height: 100vh;
     padding: 40px;
     margin: 0 !important;
+    height: calc(100vh - 80px);
+
+    @media (max-width:992px) {
+        padding: 20px;
+        height: calc(60vh - 130px)
+    }
+
+    @media (max-width:600px) {
+        padding-top: 70px;
+        height: calc(60vh - 90px)
+    }
 
     .heroIM {
         background: url("/images/fon.png");
@@ -26,6 +37,10 @@
             border-radius: 19px;
             z-index: 1;
         }
+
+        @media (max-width:992px) {
+            height: calc(60vh - 90px)
+        }
     }
     
     .heroContent{
@@ -35,6 +50,13 @@
         max-width: 1500px;
         margin: auto auto;
 
+        @media (max-width:992px) {
+            height: fit-content
+        }
+
+        @media (max-width:1530px) {
+            padding: 0 2.5%; 
+        }
 
         h1{
             color: #FFFFFF;
@@ -44,8 +66,12 @@
         p{
             margin: 40px 0;
             text-transform: uppercase;
-            font-size: 40px;
+            // font-size: 40px;
             letter-spacing: -0.05em;
+
+            @media (max-width: 992px){
+                margin: 20px 0;
+            }
         }
 
         .CTAbutton {
@@ -119,6 +145,25 @@
                     .arrow {
                         transform: rotate(0deg);
                         fill: var(--third-background)
+                    }
+                }
+            }
+
+            @media (max-width:992px) {
+                height: 50px;
+                .text {
+                    margin-left: 50px;
+                }
+                .arrow {
+                    width: 25px !important;
+                    height: 25px !important;
+                }
+                &:hover {
+                    .text {
+                        transform: translateX(-50px);
+                    }
+                    .circle {
+                        left: calc(100% - 50px);
                     }
                 }
             }
