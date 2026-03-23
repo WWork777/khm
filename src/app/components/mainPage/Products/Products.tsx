@@ -21,7 +21,14 @@ export const SliderCard = ({
 }: SliderCardProps) => {
   return (
     <div className={styles.sliderCard}>
-        <Image className={styles.cardImage} src={image} height={1000} width={1000} alt="about khm"/>
+        <Image 
+            className={styles.cardImage} 
+            src={image} 
+            height={400} 
+            width={400} 
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            alt={title || "about khm"}
+        />
         <div className={styles.cardBody}>
             <h3>{title}</h3>
             <button>
