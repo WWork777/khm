@@ -1,152 +1,140 @@
+.footer {
+  padding: 40px;
+  position: relative;
 
-.footer{
-    padding: 40px;
+  @media (max-width: 992px) {
+    padding: 0 2.5%;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--second-background);
+  }
+
+  .footerContent {
+    background-color: var(--card-back);
+    border-radius: 25px;
+    height: 300px;
+
+    @media (max-width: 992px) {
+      height: fit-content;
+    }
+  }
+
+  .arrows {
+    margin: 0 auto;
+    max-width: 1500px;
     position: relative;
+    z-index: 2;
 
-    @media (max-width: 992px){
-        padding: 30px;
+    img {
+      object-fit: contain;
+      position: absolute;
+      top: -100px; // Добавил единицы измерения
     }
 
-    a{
-        text-decoration: none;
+    @media (max-width: 992px) {
+      img {
+        top: -50px;
+        left: calc(50% - 70px);
+        width: 150px;
+        height: 100px;
+      }
+    }
+  }
+
+  .navGrid {
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    justify-content: space-between;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+
+    .leftSide {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; // Расстояние между лого и текстом
+
+      p {
+        margin: 0;
+        font-size: 20px;
         color: var(--second-background);
-    }
+        line-height: 1.4;
+      }
 
-    .footerContent{
-        background-color: var(--card-back);
-        border-radius: 25px;
-        height: 300px;
-        
-        @media (max-width: 992px){
-            height: fit-content;
-        }
-    }
+      img {
+        width: 180px;
+        height: auto;
+      }
 
-    .arrows {
-        background-size: contain; /* или cover, или конкретные размеры */
-        margin: 0 auto;
-        max-width: 1500px;
-        position: relative;
-        z-index: 2;
-
-        img{
-            object-fit: contain;
-            position: absolute;
-            top: -100;
-        }
-
-        @media (max-width: 992px){
-            img{
-                top: -50;
-                left: calc(50% - 70px);
-                width: 150px;
-                height: 100px;
-            }
-        }
-    }
-
-    .navGrid{
-        display: flex;
+      @media (max-width: 992px) {
+        width: 100%;
+        margin-bottom: 40px;
         flex-direction: row;
-        padding: 40px;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        @media (max-width: 992px){
-            flex-direction: column;
-        }
-        
-        .leftSide{
-            
-            width: 25%;
-            display: flex;
-            flex-direction: column;
-
-            img{
-                width: 200px;
-                height: auto;
-            }
-            
-            @media (max-width: 992px){
-                margin-bottom: 40px;
-                gap: 20px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                flex-direction: row;
-            }
-
-            @media (max-width: 500px){
-                margin-bottom: 40px;
-                gap: 0px;
-                vdisplay: flex;
-                justify-content: center;
-                flex-direction: column;
-            }
-        }
-
-        .navSide{
-            width: 50%;
-            flex-wrap: wrap;
-            display: flex;
-            justify-content: left;
-            flex-direction: row;
-            gap: 40px;
-            
-            height: fit-content;
-            @media (max-width: 992px){
-                width: 100%;
-                margin-bottom: 40px;
-            }
-
-            @media (max-width: 500px){
-                flex-direction: column;
-                margin-bottom: 40px;
-            }
-        }
-        .contactsSide{
-            width: 25%;
-            
-
-            ul {
-                list-style: none;
-                display: flex;
-                flex-direction: column;
-                
-                li {
-                    transition: all 0.3s ease;
-                    margin-bottom: 20px;
-                    
-                    &:hover {
-                        transform: scale(1.05);
-                        opacity: 0.95;
-                    }
-                    
-                    &:active {
-                        transform: scale(0.98);
-                    }
-                    
-                    .footerContacts {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 20px;
-                    }
-                }
-            }
-
-            @media (max-width: 992px){
-                width: 100%;
-                ul{
-                    padding: 0;
-                    // gap: 20px;
-                    // flex-direction: row;
-                    // justify-content: left;
-                    // flex-wrap: wrap;
-
-                    li .footerContacts{
-                        gap:10px;
-                    }
-                }
-                
-            }
-        }
+      @media (max-width: 500px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
+
+    .navSide {
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+
+      @media (max-width: 992px) {
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+      }
+
+      @media (max-width: 500px) {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    .contactsSide {
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+
+        li {
+          transition: all 0.3s ease;
+          margin-bottom: 15px;
+
+          &:hover {
+            transform: translateX(
+              5px
+            ); // Легкое смещение вправо вместо увеличения
+            opacity: 0.8;
+          }
+
+          .footerContacts {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 15px;
+            font-size: 15px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+    }
+  }
 }
