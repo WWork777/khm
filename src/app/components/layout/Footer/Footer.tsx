@@ -50,14 +50,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a className={styles.footerContacts} href="tel:89059650390">
+                <a className={styles.footerContacts} href="tel:+79059650390">
                   <Image
                     src="/svg/phone.svg"
                     alt="Телефон"
                     width={25}
                     height={25}
                   />
-                  8 (905) 965-03-90
+                  +7 (905) 965-03-90
                 </a>
               </li>
               <li>

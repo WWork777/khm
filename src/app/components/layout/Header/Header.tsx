@@ -34,14 +34,15 @@ export default function Header() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
-  
 
   return (
-    <header className={`${styles.header} ${ isScrolled && !menuOpen ? styles.scrolled : ""}`}>
+    <header
+      className={`${styles.header} ${isScrolled && !menuOpen ? styles.scrolled : ""}`}
+    >
       {/* Остальной код без изменений */}
-        <div>
-            <div className={`${styles.inner} ${ menuOpen ? styles.modalOpen : ""}`}>
-                {/* <Link href="/" className={styles.logo}>
+      <div>
+        <div className={`${styles.inner} ${menuOpen ? styles.modalOpen : ""}`}>
+          {/* <Link href="/" className={styles.logo}>
                     <Image
                     src="/svg/logo.svg"
                     alt="Логотип"
@@ -51,30 +52,30 @@ export default function Header() {
                     />
                 </Link> */}
 
-                {/* Навигация desktop */}
-                <nav className={`${styles.nav} ${ isScrolled && !menuOpen ? styles.scrolled : ""} `}>
-                    <Link href="/#about">О компании</Link>
-                    <Link href="/#products">Продукция</Link>
-                    <Link href="/#services">Услуги</Link>
-                    <Link href="/#contacts">Контакты</Link>
-                </nav>
+          {/* Навигация desktop */}
+          <nav
+            className={`${styles.nav} ${isScrolled && !menuOpen ? styles.scrolled : ""} `}
+          >
+            <Link href="/#about">О компании</Link>
+            <Link href="/#products">Продукция</Link>
+            <Link href="/#services">Услуги</Link>
+            <Link href="/#contacts">Контакты</Link>
+          </nav>
 
-                {/* Контакты и кнопка */}
-                <div className={styles.actions}>
-                    <div className={styles.contacts}>
-                    <a href={`tel:${phone}`} className={styles.phone}>
-                        +7 (999) 999 - 99 - 99
-                        
-                    
-                    <Image
-                            className={styles.icon}
-                            src="/svg/phoneHead.svg"
-                            alt="phone"
-                            width={30}
-                            height={30}
-                        />
-                    </a>
-                    {/* <div className={styles.socials}>
+          {/* Контакты и кнопка */}
+          <div className={styles.actions}>
+            <div className={styles.contacts}>
+              <a href="tel:+79059650390" className={styles.phone}>
+                + 7 (905) 965-03-90
+                {/* <Image
+                  className={styles.icon}
+                  src="/svg/phoneHead.svg"
+                  alt="phone"
+                  width={30}
+                  height={30}
+                /> */}
+              </a>
+              {/* <div className={styles.socials}>
                         <Link href="https://m.vk.com/tridsat_dva" target="_blank">
                         
                         </Link>
@@ -88,19 +89,19 @@ export default function Header() {
                         />
                         </Link>
                     </div> */}
-                    </div>
-                </div>
-
-                <button
-                    className={styles.burger}
-                    onClick={() => setMenuOpen(!menuOpen)}
-                >
-                    <span />
-                    <span />
-                    <span />
-                </button>
             </div>
+          </div>
+
+          <button
+            className={styles.burger}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
+      </div>
       {/* Мобильное меню */}
       <div
         className={`${styles.mobileMenuOverlay} ${
@@ -137,19 +138,18 @@ export default function Header() {
           </nav>
           <div className={styles.mobileContacts}>
             <div className={styles.contacts}>
-                <div className={styles.phone}>
-                    <a href="">
-                        +7 (999) 999 - 99 - 99
-                        <Image
-                            className={styles.icon}
-                            src="/svg/phoneHead.svg"
-                            alt="phone"
-                            width={30}
-                            height={30}
-                        />
-                    </a>
-                </div>
-
+              <div className={styles.phone}>
+                <a href="">
+                  +7 (999) 999 - 99 - 99
+                  <Image
+                    className={styles.icon}
+                    src="/svg/phoneHead.svg"
+                    alt="phone"
+                    width={30}
+                    height={30}
+                  />
+                </a>
+              </div>
             </div>
             {/* <div className={styles.socials}>
               <Link href="https://m.vk.com/tridsat_dva" target="_blank">
